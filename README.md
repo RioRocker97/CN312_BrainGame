@@ -1,28 +1,8 @@
-# A Brain Response Check Game with Flutter.
+# brain_response_6010613518
 
-You are to implement a simple game that will check response of your brain using Flutter framework.
+My Flutter Project to complete Brain_Response Assignment.
 
-## Task
+# Created by
 
-Implement a brain response check game with your own design.
-
-Choose your own grid size with a minimum of 4x4.
-
-## Input
-
-None
-
-## Output
-
-None
-
-## Constraints
-
-- Use Flutter framework.
-
------
-
-### Example Input 1
-
-### Example Output 1
+Kasin Yamsri <6010613518>
 
