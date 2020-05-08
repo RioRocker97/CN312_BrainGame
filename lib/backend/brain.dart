@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:io';
+import 'dart:core';
 class Brain{
 
   List gameSlot;
@@ -7,13 +8,14 @@ class Brain{
   int nextPos;
   int mode;
   int maxPos;
-
+  double currentTime;
   Brain(int size){
     this.gameSlot = new List(size);
     this.pos = 1;
     this.nextPos = (size*size) + 1;
     this.mode = size;
     this.maxPos = size==3 ? 40 : 70;
+    this.currentTime = 0.0;
     var random = new Random();
 
     for(int i =0;i<size;i++){
@@ -52,7 +54,7 @@ class Brain{
     x = x-1;
     y = y-1;
 
-    if(this.pos == this.gameSlot[x][y] && x < 3 && y < 3){
+    if(this.pos == this.gameSlot[x][y] && x < this.mode && y < this.mode){
       if(this.nextPos <= this.maxPos){gameSlot[x][y] = this.nextPos;}
       else{gameSlot[x][y] = -1;}
       this.pos +=1;
@@ -86,14 +88,23 @@ class Brain{
   String getMode(){
     return this.mode.toString();
   }
+  int getModeInt(){
+    return this.mode;
+  }
   int getCurrentSlot(int x,int y){
     return this.gameSlot[x-1][y-1];
+  }
+  void setCurrentTime(double a){
+    this.currentTime = a ;
+  }
+  double getCurrentTime(){
+    return this.currentTime;
   }
 }
 
 
-/*void main(List<String> args) {
-  Brain game = new Brain(3);
+void main(List<String> args) {
+  /*Brain game = new Brain(3);
   while(game.playBrainStatus()){
     game.CurrentBrain();
     stdout.write("X << ");
@@ -102,5 +113,14 @@ class Brain{
     int y = int.parse(stdin.readLineSync());
     game.playBrain(x,y);
   }
+  */
+ /* var myWatch = new Stopwatch();
+  Duration myTime = myWatch.elapsed;
+  myWatch.start();
+  while(true){
+    myTime = myWatch.elapsed;
+    double b = (myTime.inMilliseconds/1000.0);
+    String time = b.toStringAsFixed(2);
+    print("It's $time");
+  }*/
 }
-*/

@@ -34,13 +34,13 @@ class SelectPageState extends State<SelectPage>{
                   setState(() {
                     selectRoute(context,3);
                   });
-                },wordCol: Colors.black,butCol: Colors.white,minWideBut: 200.0,),
+                },wordCol: Colors.black,butCol: Colors.white,minWideBut: 200.0,wordSize: 50.0,),
               ),
               myButton(word: "4x4",func :(){
                 setState(() {
                   selectRoute(context,4);
                 });
-              },wordCol: Colors.black,butCol: Colors.white,minWideBut: 200.0,),
+              },wordCol: Colors.black,butCol: Colors.white,minWideBut: 200.0,wordSize: 50.0,),
             ],
           ),
         ),

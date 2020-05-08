@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 class myButton extends StatelessWidget{
-  myButton({this.word,this.func,this.wordCol,this.butCol,this.minWideBut});
+  myButton({this.word,this.func,this.wordCol,this.butCol,this.minWideBut,this.wordSize});
   String word;
   Function func;
   Color wordCol;
   Color butCol;
   double minWideBut;
+  double wordSize ;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -19,7 +20,7 @@ class myButton extends StatelessWidget{
         FlatButton(
           child: Text(word,style: GoogleFonts.bitter(textStyle: TextStyle(
             color: wordCol,
-            fontSize: 50.0
+            fontSize: wordSize,
           )),),
           onPressed: func,
           color: butCol,
@@ -222,25 +223,17 @@ Color swapColor(int current,int mode){
   Color col2 = Colors.amberAccent;
   Color col3 = Colors.deepOrangeAccent;
   Color col4 = Colors.lightBlueAccent;
-  Color collast = Colors.blueGrey;
+  Color collast = Colors.indigoAccent;
+  Color colempty = Colors.blueGrey;
 
   int step1 = (mode*mode)+1;
   int step2 = (step1*2)-1;
   int step3 = (step1*3)-2;
   int step4 = (step1*4)-3;
-  if(current < step1 && current != -1){
-    return col1;
-  }
-  else if(current < step2 && current != -1){
-    return col2;
-  }
-  else if(current < step3 && current != -1){
-    return col3;
-  }
-  else if(current < step4 && current != -1){
-    return col4;
-  }
-  else{
-    return collast;
-  }
+  if(current == -1){return colempty;}
+  else if(current < step1){return col1;}
+  else if(current < step2){return col2;}
+  else if(current < step3){return col3;}
+  else if(current < step4){return col4;}
+  else{return collast;}
 }

@@ -3,7 +3,7 @@ import 'package:brain_response_6010613518/widget/myGame.dart';
 import 'package:brain_response_6010613518/widget/myWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/rendering.dart';
 class GamePage extends StatefulWidget{
   GamePage({this.game});
   Brain game;
@@ -21,6 +21,7 @@ class GamePageState extends State<GamePage>{
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
+    //debugPaintSizeEnabled = true;
     return Scaffold(
       body: myContainer(
         path: 'public/TestBG.png',
@@ -36,7 +37,7 @@ class GamePageState extends State<GamePage>{
                         padding: EdgeInsets.only(top: h/20,),
                         child: myTextQuickSand(word: mainGame.getMode(),col: Colors.amber,size: 50.0,)
                     ),
-                    myTextQuickSand(word: "0.00",col: Colors.greenAccent,size: 50.0,),
+                    myTextQuickSand(word:"Go !",col: Colors.greenAccent,size: 50.0,),
                   ],
                 ),
               ),

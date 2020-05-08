@@ -22,7 +22,7 @@ class MainPageState extends State<MainPage>{
             setState(() {
               mainRoute(context);
             });
-          },wordCol: Colors.black,butCol: Colors.white,minWideBut: 200.0,),
+          },wordCol: Colors.black,butCol: Colors.white,minWideBut: 200.0,wordSize: 50.0,),
         )
       ),
     );

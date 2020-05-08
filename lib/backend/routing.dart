@@ -24,7 +24,7 @@ void selectRoute(BuildContext context,int id){
       )
   );
 }
-void EndRoute(BuildContext context,int id,{double t}){
+void EndRoute(BuildContext context,int id,{double t,int m}){
   if(id == 3){
     Navigator.push(context,
         MaterialPageRoute(
@@ -44,6 +44,7 @@ void EndRoute(BuildContext context,int id,{double t}){
         MaterialPageRoute(
             builder: (context) => EndPage(
               mytime: t,
+              mode: m,
             )
         )
     );
