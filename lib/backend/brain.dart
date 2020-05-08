@@ -13,7 +13,7 @@ class Brain{
     this.pos = 1;
     this.nextPos = (size*size) + 1;
     this.mode = size;
-    this.maxPos = size==3 ? 40 : 50;
+    this.maxPos = size==3 ? 40 : 70;
     var random = new Random();
 
     for(int i =0;i<size;i++){
@@ -54,7 +54,7 @@ class Brain{
 
     if(this.pos == this.gameSlot[x][y] && x < 3 && y < 3){
       if(this.nextPos <= this.maxPos){gameSlot[x][y] = this.nextPos;}
-      else{gameSlot[x][y] = 'X';}
+      else{gameSlot[x][y] = -1;}
       this.pos +=1;
       this.nextPos +=1;
     }
@@ -85,6 +85,9 @@ class Brain{
   }
   String getMode(){
     return this.mode.toString();
+  }
+  int getCurrentSlot(int x,int y){
+    return this.gameSlot[x-1][y-1];
   }
 }
 
